@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2e528d8-c9e7-48cd-ab41-8aeb06d74c0d" name="Changes" comment="Initial Commit">
+    <list default="true" id="a2e528d8-c9e7-48cd-ab41-8aeb06d74c0d" name="Changes" comment="Add Rocket Class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +55,28 @@
       <option name="project" value="LOCAL" />
       <updated>1689205910361</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Phase txt files">
+      <created>1689434446898</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1689434446898</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add Item Class">
+      <created>1689807339516</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689807339516</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add Rocket Class">
+      <created>1689807354544</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689807354544</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -72,6 +92,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="Add Phase txt files" />
+    <MESSAGE value="Add Item Class" />
+    <MESSAGE value="Add Rocket Class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Rocket Class" />
   </component>
 </project>

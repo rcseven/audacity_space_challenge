@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Simulation {
 
-    ArrayList<Item> loadItems(String fileName) {
+    public ArrayList<Item> loadItems(String fileName) {
         ArrayList<Item> payload = new ArrayList<>();
         try {
             File file = new File(fileName);
@@ -16,7 +16,7 @@ public class Simulation {
                 Item item = new Item(itemPayload[0], Integer.parseInt(itemPayload[1]));
                 payload.add(item);
             }
-
+            scanner.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -24,5 +24,38 @@ public class Simulation {
         return payload;
     }
 
+    public ArrayList<Item> loadU1(ArrayList<Item> payload) {
+        ArrayList<Item> u1Payload = new ArrayList<>();
+        U1 u1 = new U1();
+        for (Item item : payload) {
+            if (u1.canCarry(item)) {
+                u1Payload.add(item);
+                u1.carry(item);
+            }
+        }
+        return u1Payload;
+    }
 
+    public ArrayList<Item> loadU2(ArrayList<Item> payload) {
+        ArrayList<Item> u2Payload = new ArrayList<>();
+        U2 u2 = new U2();
+        for (Item item : payload) {
+            if (u2.canCarry(item)) {
+                u2Payload.add(item);
+                u2.carry(item);
+            }
+        }
+        return u2Payload;
+    }
+
+    public int runSimulation(ArrayList<Rocket> rockets) {
+        int totalBudget = 0;
+        for (Rocket rocket : rockets) {
+            totalBudget += rocket.getCost();
+            while (!rocket.launch() || !rocket.land()) {
+                totalBudget += rocket.getCost();
+            }
+        }
+        return totalBudget;
+    }
 }

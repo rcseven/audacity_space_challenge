@@ -1,13 +1,19 @@
 public class U1 extends Rocket{
-    private int maxWeight = 18000;
-    private int weight = 10000;
-    private int cost = 100;
 
-    public double chanceLaunchExplosion(int carried) {
-        return (0.05 * (carried / maxWeight));
+    U1() {
+        setCost(100);
+        setWeight(10000);
+        setCurrentWeight(10000);
+        setMaxWeight(18000);
     }
 
-    public double chanceLandingCrash(int carried) {
-        return (0.01 * (carried / maxWeight));
+    @Override
+    public boolean launch() {
+        return  0.05 * getEquationAlgo() <= Math.random() * 1;
+    }
+
+    @Override
+    public boolean land() {
+        return  0.01 * getEquationAlgo() <= Math.random() * 1;
     }
 }

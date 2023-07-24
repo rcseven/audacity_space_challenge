@@ -37,6 +37,10 @@ public class Rocket implements SpaceShip{
         this.cost = cost;
     }
 
+    public double getEquationAlgo() {
+        return ((double) getCurrentWeight() - getWeight() / getMaxWeight() - getWeight());
+    }
+
     @Override
     public boolean launch() {
         return true;

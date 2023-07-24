@@ -18,34 +18,42 @@ public class Simulation {
             }
             scanner.close();
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            System.out.println("File not found.");
         }
 
         return payload;
     }
 
-    public ArrayList<Item> loadU1(ArrayList<Item> payload) {
-        ArrayList<Item> u1Payload = new ArrayList<>();
+    public ArrayList<Rocket> loadU1(ArrayList<Item> payload) {
+        ArrayList<Rocket> u1Rockets = new ArrayList<>();
         U1 u1 = new U1();
         for (Item item : payload) {
             if (u1.canCarry(item)) {
-                u1Payload.add(item);
+                u1.carry(item);
+            } else {
+                u1Rockets.add(u1);
+                u1 = new U1();
                 u1.carry(item);
             }
         }
-        return u1Payload;
+        u1Rockets.add(u1);
+        return u1Rockets;
     }
 
-    public ArrayList<Item> loadU2(ArrayList<Item> payload) {
-        ArrayList<Item> u2Payload = new ArrayList<>();
+    public ArrayList<Rocket> loadU2(ArrayList<Item> payload) {
+        ArrayList<Rocket> u2Rockets = new ArrayList<>();
         U2 u2 = new U2();
         for (Item item : payload) {
             if (u2.canCarry(item)) {
-                u2Payload.add(item);
+                u2.carry(item);
+            } else {
+                u2Rockets.add(u2);
+                u2 = new U2();
                 u2.carry(item);
             }
         }
-        return u2Payload;
+        u2Rockets.add(u2);
+        return u2Rockets;
     }
 
     public int runSimulation(ArrayList<Rocket> rockets) {
